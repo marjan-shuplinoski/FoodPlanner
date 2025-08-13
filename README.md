@@ -14,9 +14,9 @@
 └── src
 	├── server.js      # Express app entry point
 	├── models/        # Mongoose models (User, Food)
-	├── routes/        # API routes (auth, food)
-	├── controllers/   # Route handlers
-	├── middleware/    # JWT auth, error handling
+	├── routes/        # API routes (auth.js: register, login; food.js: CRUD)
+	├── controllers/   # Business logic (authController.js, foodController.js)
+	├── middleware/    # JWT auth (auth.js), error handling (errorHandler.js)
 ├── config/        # DB and environment config
 ├── tests/         # Unit/integration tests
 ```
