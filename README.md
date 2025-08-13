@@ -46,6 +46,7 @@
 - Food list: displays entries instantly after adding
 - Update/Delete buttons for each entry
 - When viewing foods by date (using datepicker), update/delete buttons are disabled
+- Date picker on selecting the day and previewing the food
 
 ## DevOps
 - CI/CD pipeline with GitHub Actions for linting, testing, building, and deploying
