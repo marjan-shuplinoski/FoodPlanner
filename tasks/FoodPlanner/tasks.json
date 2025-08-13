@@ -1,0 +1,490 @@
+{
+  "tasks": [
+    {
+      "id": "1074bb5a-539b-40ec-a52f-6efb1eb8838f",
+      "name": "Initialize Backend Project",
+      "description": "Set up Node.js, Express, TypeScript backend with basic folder structure as per README.md.",
+      "status": "in_progress",
+      "dependencies": [],
+      "createdAt": "2025-08-13T06:22:03.556Z",
+      "updatedAt": "2025-08-13T06:23:13.938Z",
+      "relatedFiles": [
+        {
+          "path": "/backend/server.ts",
+          "type": "CREATE",
+          "description": "Backend entry point file."
+        }
+      ],
+      "implementationGuide": "Create /backend folder, initialize npm, set up tsconfig, install dependencies (express, mongoose, typescript, etc.), create initial files.",
+      "verificationCriteria": "Backend folder exists, server starts, TypeScript compiles."
+    },
+    {
+      "id": "5dd9bd21-2505-41b0-a8a9-ab222918647c",
+      "name": "Configure MongoDB and Environment",
+      "description": "Set up MongoDB connection and config files for environment variables.",
+      "status": "pending",
+      "dependencies": [
+        {
+          "taskId": "1074bb5a-539b-40ec-a52f-6efb1eb8838f"
+        }
+      ],
+      "createdAt": "2025-08-13T06:22:03.556Z",
+      "updatedAt": "2025-08-13T06:22:03.556Z",
+      "relatedFiles": [
+        {
+          "path": "/backend/config/db.ts",
+          "type": "CREATE",
+          "description": "MongoDB connection logic."
+        }
+      ],
+      "implementationGuide": "Create /backend/config, add DB connection logic, use dotenv for env variables.",
+      "verificationCriteria": "App connects to MongoDB using env variables."
+    },
+    {
+      "id": "6dea5a22-de3a-4141-9f72-09ac4a612b9d",
+      "name": "Create Models (User, Food)",
+      "description": "Implement Mongoose models for User and Food as described in README.md.",
+      "status": "pending",
+      "dependencies": [
+        {
+          "taskId": "5dd9bd21-2505-41b0-a8a9-ab222918647c"
+        }
+      ],
+      "createdAt": "2025-08-13T06:22:03.556Z",
+      "updatedAt": "2025-08-13T06:22:03.556Z",
+      "relatedFiles": [
+        {
+          "path": "/backend/models/User.ts",
+          "type": "CREATE",
+          "description": "User model definition."
+        },
+        {
+          "path": "/backend/models/Food.ts",
+          "type": "CREATE",
+          "description": "Food model definition."
+        }
+      ],
+      "implementationGuide": "Create /backend/models/User.ts and /backend/models/Food.ts with required fields.",
+      "verificationCriteria": "Models exist and can be used in controllers."
+    },
+    {
+      "id": "f044d60e-d072-4969-8339-e3327e57bc84",
+      "name": "Implement JWT Authentication Middleware",
+      "description": "Add JWT-based authentication middleware for protected routes.",
+      "status": "pending",
+      "dependencies": [
+        {
+          "taskId": "6dea5a22-de3a-4141-9f72-09ac4a612b9d"
+        }
+      ],
+      "createdAt": "2025-08-13T06:22:03.556Z",
+      "updatedAt": "2025-08-13T06:22:03.556Z",
+      "relatedFiles": [
+        {
+          "path": "/backend/middleware/auth.ts",
+          "type": "CREATE",
+          "description": "JWT authentication middleware."
+        }
+      ],
+      "implementationGuide": "Create /backend/middleware/auth.ts, implement JWT verify logic.",
+      "verificationCriteria": "Protected routes require valid JWT."
+    },
+    {
+      "id": "70f05eb4-5785-4865-b0ed-590dedcbf130",
+      "name": "Build Auth Routes (Register, Login)",
+      "description": "Create routes for user registration and login, return JWT on success.",
+      "status": "pending",
+      "dependencies": [
+        {
+          "taskId": "f044d60e-d072-4969-8339-e3327e57bc84"
+        }
+      ],
+      "createdAt": "2025-08-13T06:22:03.556Z",
+      "updatedAt": "2025-08-13T06:22:03.556Z",
+      "relatedFiles": [
+        {
+          "path": "/backend/routes/auth.ts",
+          "type": "CREATE",
+          "description": "Auth routes for register/login."
+        }
+      ],
+      "implementationGuide": "Create /backend/routes/auth.ts, implement register/login endpoints.",
+      "verificationCriteria": "Users can register/login and receive JWT."
+    },
+    {
+      "id": "00f6a8db-87d4-4d2d-bb8b-8dd627d961f5",
+      "name": "Build Food Routes (CRUD)",
+      "description": "Create routes for food entry CRUD operations.",
+      "status": "pending",
+      "dependencies": [
+        {
+          "taskId": "70f05eb4-5785-4865-b0ed-590dedcbf130"
+        }
+      ],
+      "createdAt": "2025-08-13T06:22:03.556Z",
+      "updatedAt": "2025-08-13T06:22:03.556Z",
+      "relatedFiles": [
+        {
+          "path": "/backend/routes/food.ts",
+          "type": "CREATE",
+          "description": "Food CRUD routes."
+        }
+      ],
+      "implementationGuide": "Create /backend/routes/food.ts, implement create/read/update/delete endpoints.",
+      "verificationCriteria": "CRUD operations for food entries work."
+    },
+    {
+      "id": "2e5645b2-d9ed-4ff0-921e-797254b6955f",
+      "name": "Create Controllers for Auth and Food",
+      "description": "Implement business logic for auth and food routes.",
+      "status": "pending",
+      "dependencies": [
+        {
+          "taskId": "00f6a8db-87d4-4d2d-bb8b-8dd627d961f5"
+        }
+      ],
+      "createdAt": "2025-08-13T06:22:03.556Z",
+      "updatedAt": "2025-08-13T06:22:03.556Z",
+      "relatedFiles": [
+        {
+          "path": "/backend/controllers/authController.ts",
+          "type": "CREATE",
+          "description": "Auth controller logic."
+        },
+        {
+          "path": "/backend/controllers/foodController.ts",
+          "type": "CREATE",
+          "description": "Food controller logic."
+        }
+      ],
+      "implementationGuide": "Create /backend/controllers/authController.ts and /backend/controllers/foodController.ts.",
+      "verificationCriteria": "Controllers handle route logic and interact with models."
+    },
+    {
+      "id": "85dbac53-8393-4844-942d-74521afc571a",
+      "name": "Add Error Handling Middleware",
+      "description": "Implement centralized error handling for backend.",
+      "status": "pending",
+      "dependencies": [
+        {
+          "taskId": "2e5645b2-d9ed-4ff0-921e-797254b6955f"
+        }
+      ],
+      "createdAt": "2025-08-13T06:22:03.556Z",
+      "updatedAt": "2025-08-13T06:22:03.556Z",
+      "relatedFiles": [
+        {
+          "path": "/backend/middleware/errorHandler.ts",
+          "type": "CREATE",
+          "description": "Centralized error handler middleware."
+        }
+      ],
+      "implementationGuide": "Create /backend/middleware/errorHandler.ts, use in server.ts.",
+      "verificationCriteria": "Errors are handled and returned properly."
+    },
+    {
+      "id": "74fbe71b-cfbb-460a-96ff-ac74532726eb",
+      "name": "Write Backend Tests",
+      "description": "Add unit/integration tests for backend routes and logic.",
+      "status": "pending",
+      "dependencies": [
+        {
+          "taskId": "85dbac53-8393-4844-942d-74521afc571a"
+        }
+      ],
+      "createdAt": "2025-08-13T06:22:03.556Z",
+      "updatedAt": "2025-08-13T06:22:03.556Z",
+      "relatedFiles": [
+        {
+          "path": "/backend/tests",
+          "type": "CREATE",
+          "description": "Backend test suite."
+        }
+      ],
+      "implementationGuide": "Create /backend/tests for Jest/Supertest tests.",
+      "verificationCriteria": "Tests cover main backend logic and pass."
+    },
+    {
+      "id": "cbba0b57-ca90-48e3-8068-e1e24708fac0",
+      "name": "Dockerize Backend",
+      "description": "Create Dockerfile and docker-compose for backend service.",
+      "status": "pending",
+      "dependencies": [
+        {
+          "taskId": "74fbe71b-cfbb-460a-96ff-ac74532726eb"
+        }
+      ],
+      "createdAt": "2025-08-13T06:22:03.556Z",
+      "updatedAt": "2025-08-13T06:22:03.556Z",
+      "relatedFiles": [
+        {
+          "path": "/backend/Dockerfile",
+          "type": "CREATE",
+          "description": "Backend Dockerfile."
+        },
+        {
+          "path": "/backend/docker-compose.yml",
+          "type": "CREATE",
+          "description": "Backend docker-compose config."
+        }
+      ],
+      "implementationGuide": "Add Dockerfile and docker-compose.yml to /backend.",
+      "verificationCriteria": "Backend runs in Docker container."
+    },
+    {
+      "id": "b926d88c-81be-48cf-a23f-b5fb35cc36a2",
+      "name": "Initialize Frontend Project",
+      "description": "Set up React + TypeScript frontend with basic folder structure.",
+      "status": "pending",
+      "dependencies": [
+        {
+          "taskId": "cbba0b57-ca90-48e3-8068-e1e24708fac0"
+        }
+      ],
+      "createdAt": "2025-08-13T06:22:03.556Z",
+      "updatedAt": "2025-08-13T06:22:03.556Z",
+      "relatedFiles": [
+        {
+          "path": "/frontend/src/App.tsx",
+          "type": "CREATE",
+          "description": "Frontend main app component."
+        }
+      ],
+      "implementationGuide": "Create /frontend, initialize with create-react-app or Vite, set up folders.",
+      "verificationCriteria": "Frontend folder exists, app runs."
+    },
+    {
+      "id": "6a03f7c9-77e9-4959-a65a-8833fcc31f60",
+      "name": "Create Register and Login Components",
+      "description": "Implement register and login pages/components with JWT auth.",
+      "status": "pending",
+      "dependencies": [
+        {
+          "taskId": "b926d88c-81be-48cf-a23f-b5fb35cc36a2"
+        }
+      ],
+      "createdAt": "2025-08-13T06:22:03.556Z",
+      "updatedAt": "2025-08-13T06:22:03.556Z",
+      "relatedFiles": [
+        {
+          "path": "/frontend/src/components/Register.tsx",
+          "type": "CREATE",
+          "description": "Register component."
+        },
+        {
+          "path": "/frontend/src/components/Login.tsx",
+          "type": "CREATE",
+          "description": "Login component."
+        }
+      ],
+      "implementationGuide": "Create /frontend/src/components/Register.tsx and /frontend/src/components/Login.tsx.",
+      "verificationCriteria": "Users can register/login from frontend."
+    },
+    {
+      "id": "1bf047b2-69be-4771-b9d3-00cb69ab6173",
+      "name": "Implement JWT Auth Logic in Frontend",
+      "description": "Store and use JWT for API calls in frontend.",
+      "status": "pending",
+      "dependencies": [
+        {
+          "taskId": "6a03f7c9-77e9-4959-a65a-8833fcc31f60"
+        }
+      ],
+      "createdAt": "2025-08-13T06:22:03.556Z",
+      "updatedAt": "2025-08-13T06:22:03.556Z",
+      "relatedFiles": [
+        {
+          "path": "/frontend/src/services/auth.ts",
+          "type": "CREATE",
+          "description": "Frontend auth service for JWT."
+        }
+      ],
+      "implementationGuide": "Add logic to store JWT in localStorage, use in API requests.",
+      "verificationCriteria": "Frontend uses JWT for authenticated requests."
+    },
+    {
+      "id": "ba0fc9cf-c4f0-47b3-9603-33e4238d5ee8",
+      "name": "Create FoodForm and FoodList Components",
+      "description": "Implement components for adding and listing food entries, with datepicker.",
+      "status": "pending",
+      "dependencies": [
+        {
+          "taskId": "1bf047b2-69be-4771-b9d3-00cb69ab6173"
+        }
+      ],
+      "createdAt": "2025-08-13T06:22:03.556Z",
+      "updatedAt": "2025-08-13T06:22:03.556Z",
+      "relatedFiles": [
+        {
+          "path": "/frontend/src/components/FoodForm.tsx",
+          "type": "CREATE",
+          "description": "Food entry form component."
+        },
+        {
+          "path": "/frontend/src/components/FoodList.tsx",
+          "type": "CREATE",
+          "description": "Food list display component."
+        },
+        {
+          "path": "/frontend/src/components/DatePicker.tsx",
+          "type": "CREATE",
+          "description": "Datepicker component for food entries."
+        }
+      ],
+      "implementationGuide": "Create /frontend/src/components/FoodForm.tsx, FoodList.tsx, DatePicker.tsx.",
+      "verificationCriteria": "Users can add/list foods, select date."
+    },
+    {
+      "id": "e2ff2532-5273-4ddf-a3e2-d2de4b8bc2b4",
+      "name": "Add Update/Delete Functionality",
+      "description": "Enable update/delete for food entries, disable when viewing by date.",
+      "status": "pending",
+      "dependencies": [
+        {
+          "taskId": "ba0fc9cf-c4f0-47b3-9603-33e4238d5ee8"
+        }
+      ],
+      "createdAt": "2025-08-13T06:22:03.556Z",
+      "updatedAt": "2025-08-13T06:22:03.556Z",
+      "relatedFiles": [
+        {
+          "path": "/frontend/src/components/FoodList.tsx",
+          "type": "TO_MODIFY",
+          "description": "Add update/delete buttons and logic."
+        }
+      ],
+      "implementationGuide": "Add buttons to FoodList, disable when datepicker is active.",
+      "verificationCriteria": "Update/delete works, buttons disabled by date."
+    },
+    {
+      "id": "1b6f1594-fd94-43ac-a8b1-b7db8117f191",
+      "name": "Implement Custom Hooks and API Services",
+      "description": "Create hooks for API calls and state management.",
+      "status": "pending",
+      "dependencies": [
+        {
+          "taskId": "e2ff2532-5273-4ddf-a3e2-d2de4b8bc2b4"
+        }
+      ],
+      "createdAt": "2025-08-13T06:22:03.556Z",
+      "updatedAt": "2025-08-13T06:22:03.556Z",
+      "relatedFiles": [
+        {
+          "path": "/frontend/src/hooks/useFoods.ts",
+          "type": "CREATE",
+          "description": "Custom hook for food API calls."
+        },
+        {
+          "path": "/frontend/src/services/food.ts",
+          "type": "CREATE",
+          "description": "Frontend service for food API."
+        }
+      ],
+      "implementationGuide": "Add /frontend/src/hooks and /frontend/src/services for API logic.",
+      "verificationCriteria": "Hooks/services work for API calls."
+    },
+    {
+      "id": "13fd8231-e3cf-4a5e-93c1-803a76060ded",
+      "name": "Write Frontend Tests",
+      "description": "Add unit/integration tests for frontend components and logic.",
+      "status": "pending",
+      "dependencies": [
+        {
+          "taskId": "1b6f1594-fd94-43ac-a8b1-b7db8117f191"
+        }
+      ],
+      "createdAt": "2025-08-13T06:22:03.556Z",
+      "updatedAt": "2025-08-13T06:22:03.556Z",
+      "relatedFiles": [
+        {
+          "path": "/frontend/src/tests",
+          "type": "CREATE",
+          "description": "Frontend test suite."
+        }
+      ],
+      "implementationGuide": "Create /frontend/src/tests for React Testing Library tests.",
+      "verificationCriteria": "Tests cover main frontend logic and pass."
+    },
+    {
+      "id": "1bec160c-b9d0-438f-a7db-3d4e184ce548",
+      "name": "Dockerize Frontend",
+      "description": "Create Dockerfile and docker-compose for frontend service.",
+      "status": "pending",
+      "dependencies": [
+        {
+          "taskId": "13fd8231-e3cf-4a5e-93c1-803a76060ded"
+        }
+      ],
+      "createdAt": "2025-08-13T06:22:03.556Z",
+      "updatedAt": "2025-08-13T06:22:03.556Z",
+      "relatedFiles": [
+        {
+          "path": "/frontend/Dockerfile",
+          "type": "CREATE",
+          "description": "Frontend Dockerfile."
+        },
+        {
+          "path": "/frontend/docker-compose.yml",
+          "type": "CREATE",
+          "description": "Frontend docker-compose config."
+        }
+      ],
+      "implementationGuide": "Add Dockerfile and docker-compose.yml to /frontend.",
+      "verificationCriteria": "Frontend runs in Docker container."
+    },
+    {
+      "id": "5b5c9b07-49f5-47b4-ba7f-1f398b5a45f3",
+      "name": "Set Up CI/CD with GitHub Actions",
+      "description": "Create workflows for backend and frontend lint, test, build, docker.",
+      "status": "pending",
+      "dependencies": [
+        {
+          "taskId": "1bec160c-b9d0-438f-a7db-3d4e184ce548"
+        }
+      ],
+      "createdAt": "2025-08-13T06:22:03.556Z",
+      "updatedAt": "2025-08-13T06:22:03.556Z",
+      "relatedFiles": [
+        {
+          "path": "/.github/workflows/backend.yml",
+          "type": "CREATE",
+          "description": "GitHub Actions workflow for backend."
+        },
+        {
+          "path": "/.github/workflows/frontend.yml",
+          "type": "CREATE",
+          "description": "GitHub Actions workflow for frontend."
+        }
+      ],
+      "implementationGuide": "Add .github/workflows for backend and frontend, configure steps.",
+      "verificationCriteria": "CI/CD runs and passes for both services."
+    },
+    {
+      "id": "13387949-dcb9-4678-bb27-57350de46f6e",
+      "name": "Document and Finalize Project",
+      "description": "Update docs, README, and review code for final delivery.",
+      "status": "pending",
+      "dependencies": [
+        {
+          "taskId": "5b5c9b07-49f5-47b4-ba7f-1f398b5a45f3"
+        }
+      ],
+      "createdAt": "2025-08-13T06:22:03.556Z",
+      "updatedAt": "2025-08-13T06:22:03.556Z",
+      "relatedFiles": [
+        {
+          "path": "/README.md",
+          "type": "TO_MODIFY",
+          "description": "Project README file."
+        },
+        {
+          "path": "/docs",
+          "type": "TO_MODIFY",
+          "description": "Project documentation folder."
+        }
+      ],
+      "implementationGuide": "Add setup instructions, API docs, review comments, finalize code.",
+      "verificationCriteria": "Docs are complete, code is clean, project is ready."
+    }
+  ]
+}
