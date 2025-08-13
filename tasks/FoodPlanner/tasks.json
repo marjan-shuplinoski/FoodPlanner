@@ -3,25 +3,35 @@
     {
       "id": "1074bb5a-539b-40ec-a52f-6efb1eb8838f",
       "name": "Initialize Backend Project",
-      "description": "Set up Node.js, Express, TypeScript backend with basic folder structure as per README.md.",
-      "status": "in_progress",
+      "description": "Set up Node.js, Express backend with basic folder structure as per README.md. Use JavaScript (.js) files, not TypeScript.",
+      "status": "completed",
       "dependencies": [],
       "createdAt": "2025-08-13T06:22:03.556Z",
-      "updatedAt": "2025-08-13T06:23:13.938Z",
+      "updatedAt": "2025-08-13T08:05:35.601Z",
       "relatedFiles": [
         {
-          "path": "/backend/server.ts",
-          "type": "CREATE",
-          "description": "Backend entry point file."
+          "path": "backend/src/server.js",
+          "type": "CREATE"
+        },
+        {
+          "path": "backend/.env",
+          "type": "CREATE"
+        },
+        {
+          "path": "README.md",
+          "type": "REFERENCE"
         }
       ],
-      "implementationGuide": "Create /backend folder, initialize npm, set up tsconfig, install dependencies (express, mongoose, typescript, etc.), create initial files.",
-      "verificationCriteria": "Backend folder exists, server starts, TypeScript compiles."
+      "implementationGuide": "1. Initialize backend folder with npm and Express.\n2. Use .js files for all source code.\n3. Set up src/, models/, routes/, controllers/, middleware/ folders.\n4. Add .env for environment variables.\n5. Document structure in README.md.",
+      "verificationCriteria": "Backend folder is initialized, all source files use .js extension, folder structure matches README.md, no TypeScript files remain.",
+      "notes": "Refactored to use JavaScript instead of TypeScript for backend.",
+      "summary": "Backend project is initialized: src/server.js exists and runs Express, .env is set up, required folders (models, routes, controllers, middleware) are created, README documents structure, and package.json has dev/start/test scripts. All requirements are met, no TypeScript remains.",
+      "completedAt": "2025-08-13T08:05:35.593Z"
     },
     {
       "id": "5dd9bd21-2505-41b0-a8a9-ab222918647c",
       "name": "Configure MongoDB and Environment",
-      "description": "Set up MongoDB connection and config files for environment variables.",
+      "description": "Set up MongoDB connection and config files for environment variables. Use JavaScript (.js) for all backend code.",
       "status": "pending",
       "dependencies": [
         {
@@ -29,21 +39,29 @@
         }
       ],
       "createdAt": "2025-08-13T06:22:03.556Z",
-      "updatedAt": "2025-08-13T06:22:03.556Z",
+      "updatedAt": "2025-08-13T08:00:23.616Z",
       "relatedFiles": [
         {
-          "path": "/backend/config/db.ts",
-          "type": "CREATE",
-          "description": "MongoDB connection logic."
+          "path": "backend/src/db.js",
+          "type": "CREATE"
+        },
+        {
+          "path": "backend/.env",
+          "type": "TO_MODIFY"
+        },
+        {
+          "path": "README.md",
+          "type": "REFERENCE"
         }
       ],
-      "implementationGuide": "Create /backend/config, add DB connection logic, use dotenv for env variables.",
-      "verificationCriteria": "App connects to MongoDB using env variables."
+      "implementationGuide": "1. Install mongoose and configure MongoDB connection in backend/src/db.js.\n2. Use .js files for all backend code.\n3. Store MongoDB URI and other secrets in .env.\n4. Document config in README.md.",
+      "verificationCriteria": "MongoDB connection is set up in backend/src/db.js, all backend code uses .js, .env contains secrets, README.md documents config.",
+      "notes": "Refactored to use JavaScript instead of TypeScript for backend."
     },
     {
       "id": "6dea5a22-de3a-4141-9f72-09ac4a612b9d",
       "name": "Create Models (User, Food)",
-      "description": "Implement Mongoose models for User and Food as described in README.md.",
+      "description": "Implement Mongoose models for User and Food as described in README.md. Use JavaScript (.js) files.",
       "status": "pending",
       "dependencies": [
         {
@@ -51,26 +69,29 @@
         }
       ],
       "createdAt": "2025-08-13T06:22:03.556Z",
-      "updatedAt": "2025-08-13T06:22:03.556Z",
+      "updatedAt": "2025-08-13T08:00:24.943Z",
       "relatedFiles": [
         {
-          "path": "/backend/models/User.ts",
-          "type": "CREATE",
-          "description": "User model definition."
+          "path": "backend/src/models/User.js",
+          "type": "CREATE"
         },
         {
-          "path": "/backend/models/Food.ts",
-          "type": "CREATE",
-          "description": "Food model definition."
+          "path": "backend/src/models/Food.js",
+          "type": "CREATE"
+        },
+        {
+          "path": "README.md",
+          "type": "REFERENCE"
         }
       ],
-      "implementationGuide": "Create /backend/models/User.ts and /backend/models/Food.ts with required fields.",
-      "verificationCriteria": "Models exist and can be used in controllers."
+      "implementationGuide": "1. Create backend/src/models/User.js and backend/src/models/Food.js.\n2. Use .js files for all model code.\n3. Document model structure in README.md.",
+      "verificationCriteria": "User and Food models implemented in .js files, no TypeScript remains, README.md documents model structure.",
+      "notes": "Refactored to use JavaScript instead of TypeScript for backend models."
     },
     {
       "id": "f044d60e-d072-4969-8339-e3327e57bc84",
       "name": "Implement JWT Authentication Middleware",
-      "description": "Add JWT-based authentication middleware for protected routes.",
+      "description": "Add JWT-based authentication middleware for protected routes. Use JavaScript (.js) files.",
       "status": "pending",
       "dependencies": [
         {
@@ -78,21 +99,25 @@
         }
       ],
       "createdAt": "2025-08-13T06:22:03.556Z",
-      "updatedAt": "2025-08-13T06:22:03.556Z",
+      "updatedAt": "2025-08-13T08:00:26.397Z",
       "relatedFiles": [
         {
-          "path": "/backend/middleware/auth.ts",
-          "type": "CREATE",
-          "description": "JWT authentication middleware."
+          "path": "backend/src/middleware/auth.js",
+          "type": "CREATE"
+        },
+        {
+          "path": "README.md",
+          "type": "REFERENCE"
         }
       ],
-      "implementationGuide": "Create /backend/middleware/auth.ts, implement JWT verify logic.",
-      "verificationCriteria": "Protected routes require valid JWT."
+      "implementationGuide": "1. Implement JWT middleware in backend/src/middleware/auth.js.\n2. Use .js files for all backend code.\n3. Document middleware in README.md.",
+      "verificationCriteria": "JWT middleware implemented in .js file, no TypeScript remains, README.md documents middleware.",
+      "notes": "Refactored to use JavaScript instead of TypeScript for backend middleware."
     },
     {
       "id": "70f05eb4-5785-4865-b0ed-590dedcbf130",
       "name": "Build Auth Routes (Register, Login)",
-      "description": "Create routes for user registration and login, return JWT on success.",
+      "description": "Create routes for user registration and login, return JWT on success. Use JavaScript (.js) files.",
       "status": "pending",
       "dependencies": [
         {
@@ -100,21 +125,25 @@
         }
       ],
       "createdAt": "2025-08-13T06:22:03.556Z",
-      "updatedAt": "2025-08-13T06:22:03.556Z",
+      "updatedAt": "2025-08-13T08:00:27.446Z",
       "relatedFiles": [
         {
-          "path": "/backend/routes/auth.ts",
-          "type": "CREATE",
-          "description": "Auth routes for register/login."
+          "path": "backend/src/routes/auth.js",
+          "type": "CREATE"
+        },
+        {
+          "path": "README.md",
+          "type": "REFERENCE"
         }
       ],
-      "implementationGuide": "Create /backend/routes/auth.ts, implement register/login endpoints.",
-      "verificationCriteria": "Users can register/login and receive JWT."
+      "implementationGuide": "1. Implement auth routes in backend/src/routes/auth.js.\n2. Use .js files for all backend code.\n3. Document routes in README.md.",
+      "verificationCriteria": "Auth routes implemented in .js file, no TypeScript remains, README.md documents routes.",
+      "notes": "Refactored to use JavaScript instead of TypeScript for backend routes."
     },
     {
       "id": "00f6a8db-87d4-4d2d-bb8b-8dd627d961f5",
       "name": "Build Food Routes (CRUD)",
-      "description": "Create routes for food entry CRUD operations.",
+      "description": "Create routes for food entry CRUD operations. Use JavaScript (.js) files.",
       "status": "pending",
       "dependencies": [
         {
@@ -122,21 +151,25 @@
         }
       ],
       "createdAt": "2025-08-13T06:22:03.556Z",
-      "updatedAt": "2025-08-13T06:22:03.556Z",
+      "updatedAt": "2025-08-13T08:00:28.425Z",
       "relatedFiles": [
         {
-          "path": "/backend/routes/food.ts",
-          "type": "CREATE",
-          "description": "Food CRUD routes."
+          "path": "backend/src/routes/food.js",
+          "type": "CREATE"
+        },
+        {
+          "path": "README.md",
+          "type": "REFERENCE"
         }
       ],
-      "implementationGuide": "Create /backend/routes/food.ts, implement create/read/update/delete endpoints.",
-      "verificationCriteria": "CRUD operations for food entries work."
+      "implementationGuide": "1. Implement food routes in backend/src/routes/food.js.\n2. Use .js files for all backend code.\n3. Document routes in README.md.",
+      "verificationCriteria": "Food routes implemented in .js file, no TypeScript remains, README.md documents routes.",
+      "notes": "Refactored to use JavaScript instead of TypeScript for backend routes."
     },
     {
       "id": "2e5645b2-d9ed-4ff0-921e-797254b6955f",
       "name": "Create Controllers for Auth and Food",
-      "description": "Implement business logic for auth and food routes.",
+      "description": "Implement business logic for auth and food routes. Use JavaScript (.js) files.",
       "status": "pending",
       "dependencies": [
         {
@@ -144,26 +177,29 @@
         }
       ],
       "createdAt": "2025-08-13T06:22:03.556Z",
-      "updatedAt": "2025-08-13T06:22:03.556Z",
+      "updatedAt": "2025-08-13T08:00:29.224Z",
       "relatedFiles": [
         {
-          "path": "/backend/controllers/authController.ts",
-          "type": "CREATE",
-          "description": "Auth controller logic."
+          "path": "backend/src/controllers/authController.js",
+          "type": "CREATE"
         },
         {
-          "path": "/backend/controllers/foodController.ts",
-          "type": "CREATE",
-          "description": "Food controller logic."
+          "path": "backend/src/controllers/foodController.js",
+          "type": "CREATE"
+        },
+        {
+          "path": "README.md",
+          "type": "REFERENCE"
         }
       ],
-      "implementationGuide": "Create /backend/controllers/authController.ts and /backend/controllers/foodController.ts.",
-      "verificationCriteria": "Controllers handle route logic and interact with models."
+      "implementationGuide": "1. Implement controllers in backend/src/controllers/authController.js and backend/src/controllers/foodController.js.\n2. Use .js files for all backend code.\n3. Document controllers in README.md.",
+      "verificationCriteria": "Controllers implemented in .js files, no TypeScript remains, README.md documents controllers.",
+      "notes": "Refactored to use JavaScript instead of TypeScript for backend controllers."
     },
     {
       "id": "85dbac53-8393-4844-942d-74521afc571a",
       "name": "Add Error Handling Middleware",
-      "description": "Implement centralized error handling for backend.",
+      "description": "Implement centralized error handling for backend. Use JavaScript (.js) files.",
       "status": "pending",
       "dependencies": [
         {
@@ -171,21 +207,25 @@
         }
       ],
       "createdAt": "2025-08-13T06:22:03.556Z",
-      "updatedAt": "2025-08-13T06:22:03.556Z",
+      "updatedAt": "2025-08-13T08:00:30.080Z",
       "relatedFiles": [
         {
-          "path": "/backend/middleware/errorHandler.ts",
-          "type": "CREATE",
-          "description": "Centralized error handler middleware."
+          "path": "backend/src/middleware/errorHandler.js",
+          "type": "CREATE"
+        },
+        {
+          "path": "README.md",
+          "type": "REFERENCE"
         }
       ],
-      "implementationGuide": "Create /backend/middleware/errorHandler.ts, use in server.ts.",
-      "verificationCriteria": "Errors are handled and returned properly."
+      "implementationGuide": "1. Implement error handler in backend/src/middleware/errorHandler.js.\n2. Use .js files for all backend code.\n3. Document error handling in README.md.",
+      "verificationCriteria": "Error handler implemented in .js file, no TypeScript remains, README.md documents error handling.",
+      "notes": "Refactored to use JavaScript instead of TypeScript for backend middleware."
     },
     {
       "id": "74fbe71b-cfbb-460a-96ff-ac74532726eb",
       "name": "Write Backend Tests",
-      "description": "Add unit/integration tests for backend routes and logic.",
+      "description": "Add unit/integration tests for backend routes and logic. Use JavaScript (.js) files and Jest/Babel for ESM support.",
       "status": "pending",
       "dependencies": [
         {
@@ -193,16 +233,32 @@
         }
       ],
       "createdAt": "2025-08-13T06:22:03.556Z",
-      "updatedAt": "2025-08-13T06:22:03.556Z",
+      "updatedAt": "2025-08-13T08:00:30.880Z",
       "relatedFiles": [
         {
-          "path": "/backend/tests",
-          "type": "CREATE",
-          "description": "Backend test suite."
+          "path": "backend/tests/auth.test.js",
+          "type": "CREATE"
+        },
+        {
+          "path": "backend/tests/food.test.js",
+          "type": "CREATE"
+        },
+        {
+          "path": "backend/jest.config.cjs",
+          "type": "TO_MODIFY"
+        },
+        {
+          "path": "backend/babel.config.json",
+          "type": "TO_MODIFY"
+        },
+        {
+          "path": "README.md",
+          "type": "REFERENCE"
         }
       ],
-      "implementationGuide": "Create /backend/tests for Jest/Supertest tests.",
-      "verificationCriteria": "Tests cover main backend logic and pass."
+      "implementationGuide": "1. Write tests in backend/tests/*.test.js.\n2. Use Jest and Babel for ESM/JavaScript support.\n3. Document test setup in README.md.",
+      "verificationCriteria": "Backend tests implemented in .js files, Jest/Babel config updated, README.md documents test setup.",
+      "notes": "Refactored to use JavaScript and Jest/Babel for backend tests."
     },
     {
       "id": "cbba0b57-ca90-48e3-8068-e1e24708fac0",
@@ -234,7 +290,7 @@
     {
       "id": "b926d88c-81be-48cf-a23f-b5fb35cc36a2",
       "name": "Initialize Frontend Project",
-      "description": "Set up React + TypeScript frontend with basic folder structure.",
+      "description": "Set up React frontend with basic folder structure. Use JavaScript (.js) files, not TypeScript.",
       "status": "pending",
       "dependencies": [
         {
@@ -242,21 +298,25 @@
         }
       ],
       "createdAt": "2025-08-13T06:22:03.556Z",
-      "updatedAt": "2025-08-13T06:22:03.556Z",
+      "updatedAt": "2025-08-13T08:01:08.886Z",
       "relatedFiles": [
         {
-          "path": "/frontend/src/App.tsx",
-          "type": "CREATE",
-          "description": "Frontend main app component."
+          "path": "frontend/src/index.js",
+          "type": "CREATE"
+        },
+        {
+          "path": "README.md",
+          "type": "REFERENCE"
         }
       ],
-      "implementationGuide": "Create /frontend, initialize with create-react-app or Vite, set up folders.",
-      "verificationCriteria": "Frontend folder exists, app runs."
+      "implementationGuide": "1. Initialize frontend folder with npm and React.\n2. Use .js files for all source code.\n3. Set up src/, components/, hooks/, services/ folders.\n4. Document structure in README.md.",
+      "verificationCriteria": "Frontend folder is initialized, all source files use .js extension, folder structure matches README.md, no TypeScript files remain.",
+      "notes": "Refactored to use JavaScript instead of TypeScript for frontend."
     },
     {
       "id": "6a03f7c9-77e9-4959-a65a-8833fcc31f60",
       "name": "Create Register and Login Components",
-      "description": "Implement register and login pages/components with JWT auth.",
+      "description": "Implement register and login pages/components with JWT auth. Use JavaScript (.js) files.",
       "status": "pending",
       "dependencies": [
         {
@@ -264,26 +324,29 @@
         }
       ],
       "createdAt": "2025-08-13T06:22:03.556Z",
-      "updatedAt": "2025-08-13T06:22:03.556Z",
+      "updatedAt": "2025-08-13T08:01:09.805Z",
       "relatedFiles": [
         {
-          "path": "/frontend/src/components/Register.tsx",
-          "type": "CREATE",
-          "description": "Register component."
+          "path": "frontend/src/components/Register.js",
+          "type": "CREATE"
         },
         {
-          "path": "/frontend/src/components/Login.tsx",
-          "type": "CREATE",
-          "description": "Login component."
+          "path": "frontend/src/components/Login.js",
+          "type": "CREATE"
+        },
+        {
+          "path": "README.md",
+          "type": "REFERENCE"
         }
       ],
-      "implementationGuide": "Create /frontend/src/components/Register.tsx and /frontend/src/components/Login.tsx.",
-      "verificationCriteria": "Users can register/login from frontend."
+      "implementationGuide": "1. Create Register.js and Login.js in frontend/src/components/.\n2. Use .js files for all component code.\n3. Document components in README.md.",
+      "verificationCriteria": "Register and Login components implemented in .js files, no TypeScript remains, README.md documents components.",
+      "notes": "Refactored to use JavaScript instead of TypeScript for frontend components."
     },
     {
       "id": "1bf047b2-69be-4771-b9d3-00cb69ab6173",
       "name": "Implement JWT Auth Logic in Frontend",
-      "description": "Store and use JWT for API calls in frontend.",
+      "description": "Store and use JWT for API calls in frontend. Use JavaScript (.js) files.",
       "status": "pending",
       "dependencies": [
         {
@@ -291,21 +354,25 @@
         }
       ],
       "createdAt": "2025-08-13T06:22:03.556Z",
-      "updatedAt": "2025-08-13T06:22:03.556Z",
+      "updatedAt": "2025-08-13T08:01:10.896Z",
       "relatedFiles": [
         {
-          "path": "/frontend/src/services/auth.ts",
-          "type": "CREATE",
-          "description": "Frontend auth service for JWT."
+          "path": "frontend/src/services/auth.js",
+          "type": "CREATE"
+        },
+        {
+          "path": "README.md",
+          "type": "REFERENCE"
         }
       ],
-      "implementationGuide": "Add logic to store JWT in localStorage, use in API requests.",
-      "verificationCriteria": "Frontend uses JWT for authenticated requests."
+      "implementationGuide": "1. Implement JWT logic in frontend/src/services/auth.js.\n2. Use .js files for all service code.\n3. Document JWT logic in README.md.",
+      "verificationCriteria": "JWT logic implemented in .js file, no TypeScript remains, README.md documents JWT usage.",
+      "notes": "Refactored to use JavaScript instead of TypeScript for frontend services."
     },
     {
       "id": "ba0fc9cf-c4f0-47b3-9603-33e4238d5ee8",
       "name": "Create FoodForm and FoodList Components",
-      "description": "Implement components for adding and listing food entries, with datepicker.",
+      "description": "Implement components for adding and listing food entries, with datepicker. Use JavaScript (.js) files.",
       "status": "pending",
       "dependencies": [
         {
@@ -313,31 +380,29 @@
         }
       ],
       "createdAt": "2025-08-13T06:22:03.556Z",
-      "updatedAt": "2025-08-13T06:22:03.556Z",
+      "updatedAt": "2025-08-13T08:01:11.862Z",
       "relatedFiles": [
         {
-          "path": "/frontend/src/components/FoodForm.tsx",
-          "type": "CREATE",
-          "description": "Food entry form component."
+          "path": "frontend/src/components/FoodForm.js",
+          "type": "CREATE"
         },
         {
-          "path": "/frontend/src/components/FoodList.tsx",
-          "type": "CREATE",
-          "description": "Food list display component."
+          "path": "frontend/src/components/FoodList.js",
+          "type": "CREATE"
         },
         {
-          "path": "/frontend/src/components/DatePicker.tsx",
-          "type": "CREATE",
-          "description": "Datepicker component for food entries."
+          "path": "README.md",
+          "type": "REFERENCE"
         }
       ],
-      "implementationGuide": "Create /frontend/src/components/FoodForm.tsx, FoodList.tsx, DatePicker.tsx.",
-      "verificationCriteria": "Users can add/list foods, select date."
+      "implementationGuide": "1. Create FoodForm.js and FoodList.js in frontend/src/components/.\n2. Use .js files for all component code.\n3. Document components in README.md.",
+      "verificationCriteria": "FoodForm and FoodList components implemented in .js files, no TypeScript remains, README.md documents components.",
+      "notes": "Refactored to use JavaScript instead of TypeScript for frontend components."
     },
     {
       "id": "e2ff2532-5273-4ddf-a3e2-d2de4b8bc2b4",
       "name": "Add Update/Delete Functionality",
-      "description": "Enable update/delete for food entries, disable when viewing by date.",
+      "description": "Enable update/delete for food entries, disable when viewing by date. Use JavaScript (.js) files.",
       "status": "pending",
       "dependencies": [
         {
@@ -345,21 +410,29 @@
         }
       ],
       "createdAt": "2025-08-13T06:22:03.556Z",
-      "updatedAt": "2025-08-13T06:22:03.556Z",
+      "updatedAt": "2025-08-13T08:01:12.697Z",
       "relatedFiles": [
         {
-          "path": "/frontend/src/components/FoodList.tsx",
-          "type": "TO_MODIFY",
-          "description": "Add update/delete buttons and logic."
+          "path": "frontend/src/components/FoodForm.js",
+          "type": "TO_MODIFY"
+        },
+        {
+          "path": "frontend/src/components/FoodList.js",
+          "type": "TO_MODIFY"
+        },
+        {
+          "path": "README.md",
+          "type": "REFERENCE"
         }
       ],
-      "implementationGuide": "Add buttons to FoodList, disable when datepicker is active.",
-      "verificationCriteria": "Update/delete works, buttons disabled by date."
+      "implementationGuide": "1. Add update/delete logic to FoodList.js and FoodForm.js.\n2. Use .js files for all component code.\n3. Document update/delete logic in README.md.",
+      "verificationCriteria": "Update/delete logic implemented in .js files, no TypeScript remains, README.md documents update/delete logic.",
+      "notes": "Refactored to use JavaScript instead of TypeScript for frontend components."
     },
     {
       "id": "1b6f1594-fd94-43ac-a8b1-b7db8117f191",
       "name": "Implement Custom Hooks and API Services",
-      "description": "Create hooks for API calls and state management.",
+      "description": "Create hooks for API calls and state management. Use JavaScript (.js) files.",
       "status": "pending",
       "dependencies": [
         {
@@ -367,26 +440,29 @@
         }
       ],
       "createdAt": "2025-08-13T06:22:03.556Z",
-      "updatedAt": "2025-08-13T06:22:03.556Z",
+      "updatedAt": "2025-08-13T08:01:13.531Z",
       "relatedFiles": [
         {
-          "path": "/frontend/src/hooks/useFoods.ts",
-          "type": "CREATE",
-          "description": "Custom hook for food API calls."
+          "path": "frontend/src/hooks/useFood.js",
+          "type": "CREATE"
         },
         {
-          "path": "/frontend/src/services/food.ts",
-          "type": "CREATE",
-          "description": "Frontend service for food API."
+          "path": "frontend/src/hooks/useAuth.js",
+          "type": "CREATE"
+        },
+        {
+          "path": "README.md",
+          "type": "REFERENCE"
         }
       ],
-      "implementationGuide": "Add /frontend/src/hooks and /frontend/src/services for API logic.",
-      "verificationCriteria": "Hooks/services work for API calls."
+      "implementationGuide": "1. Implement custom hooks in frontend/src/hooks/.\n2. Use .js files for all hook code.\n3. Document hooks in README.md.",
+      "verificationCriteria": "Custom hooks implemented in .js files, no TypeScript remains, README.md documents hooks.",
+      "notes": "Refactored to use JavaScript instead of TypeScript for frontend hooks."
     },
     {
       "id": "13fd8231-e3cf-4a5e-93c1-803a76060ded",
       "name": "Write Frontend Tests",
-      "description": "Add unit/integration tests for frontend components and logic.",
+      "description": "Add unit/integration tests for frontend components and logic. Use JavaScript (.js) files and React Testing Library.",
       "status": "pending",
       "dependencies": [
         {
@@ -394,21 +470,29 @@
         }
       ],
       "createdAt": "2025-08-13T06:22:03.556Z",
-      "updatedAt": "2025-08-13T06:22:03.556Z",
+      "updatedAt": "2025-08-13T08:01:14.266Z",
       "relatedFiles": [
         {
-          "path": "/frontend/src/tests",
-          "type": "CREATE",
-          "description": "Frontend test suite."
+          "path": "frontend/src/__tests__/Register.test.js",
+          "type": "CREATE"
+        },
+        {
+          "path": "frontend/src/__tests__/FoodForm.test.js",
+          "type": "CREATE"
+        },
+        {
+          "path": "README.md",
+          "type": "REFERENCE"
         }
       ],
-      "implementationGuide": "Create /frontend/src/tests for React Testing Library tests.",
-      "verificationCriteria": "Tests cover main frontend logic and pass."
+      "implementationGuide": "1. Write tests in frontend/src/__tests__/*.test.js.\n2. Use React Testing Library for frontend tests.\n3. Document test setup in README.md.",
+      "verificationCriteria": "Frontend tests implemented in .js files, React Testing Library used, README.md documents test setup.",
+      "notes": "Refactored to use JavaScript and React Testing Library for frontend tests."
     },
     {
       "id": "1bec160c-b9d0-438f-a7db-3d4e184ce548",
       "name": "Dockerize Frontend",
-      "description": "Create Dockerfile and docker-compose for frontend service.",
+      "description": "Create Dockerfile and docker-compose for frontend service. Use JavaScript (.js) files for all code.",
       "status": "pending",
       "dependencies": [
         {
@@ -416,26 +500,29 @@
         }
       ],
       "createdAt": "2025-08-13T06:22:03.556Z",
-      "updatedAt": "2025-08-13T06:22:03.556Z",
+      "updatedAt": "2025-08-13T08:01:14.974Z",
       "relatedFiles": [
         {
-          "path": "/frontend/Dockerfile",
-          "type": "CREATE",
-          "description": "Frontend Dockerfile."
+          "path": "frontend/Dockerfile",
+          "type": "CREATE"
         },
         {
-          "path": "/frontend/docker-compose.yml",
-          "type": "CREATE",
-          "description": "Frontend docker-compose config."
+          "path": "frontend/docker-compose.yml",
+          "type": "CREATE"
+        },
+        {
+          "path": "README.md",
+          "type": "REFERENCE"
         }
       ],
-      "implementationGuide": "Add Dockerfile and docker-compose.yml to /frontend.",
-      "verificationCriteria": "Frontend runs in Docker container."
+      "implementationGuide": "1. Add Dockerfile and docker-compose.yml to frontend/.\n2. Use .js files for all frontend code.\n3. Document Docker setup in README.md.",
+      "verificationCriteria": "Dockerfile and docker-compose.yml created, all frontend code uses .js, README.md documents Docker setup.",
+      "notes": "Refactored to use JavaScript instead of TypeScript for frontend Docker setup."
     },
     {
       "id": "5b5c9b07-49f5-47b4-ba7f-1f398b5a45f3",
       "name": "Set Up CI/CD with GitHub Actions",
-      "description": "Create workflows for backend and frontend lint, test, build, docker.",
+      "description": "Create workflows for backend and frontend lint, test, build, docker. Use JavaScript (.js) files for all code.",
       "status": "pending",
       "dependencies": [
         {
@@ -443,21 +530,20 @@
         }
       ],
       "createdAt": "2025-08-13T06:22:03.556Z",
-      "updatedAt": "2025-08-13T06:22:03.556Z",
+      "updatedAt": "2025-08-13T08:01:15.646Z",
       "relatedFiles": [
         {
-          "path": "/.github/workflows/backend.yml",
-          "type": "CREATE",
-          "description": "GitHub Actions workflow for backend."
+          "path": ".github/workflows/ci.yml",
+          "type": "CREATE"
         },
         {
-          "path": "/.github/workflows/frontend.yml",
-          "type": "CREATE",
-          "description": "GitHub Actions workflow for frontend."
+          "path": "README.md",
+          "type": "REFERENCE"
         }
       ],
-      "implementationGuide": "Add .github/workflows for backend and frontend, configure steps.",
-      "verificationCriteria": "CI/CD runs and passes for both services."
+      "implementationGuide": "1. Add .github/workflows/ci.yml for CI/CD.\n2. Use .js files for all backend and frontend code.\n3. Document CI/CD setup in README.md.",
+      "verificationCriteria": "CI/CD workflow created, all code uses .js, README.md documents CI/CD setup.",
+      "notes": "Refactored to use JavaScript instead of TypeScript for all CI/CD workflows."
     },
     {
       "id": "13387949-dcb9-4678-bb27-57350de46f6e",

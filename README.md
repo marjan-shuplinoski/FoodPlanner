@@ -1,7 +1,7 @@
 # FoodPlanner
 
-## Intro
-FoodPlanner is a MERN stack application that allows users to register, log in, and manage their food entries. Users can add foods with a description and time, view their food history, and update or delete entries. The app is designed for simplicity, focusing on quick data entry and instant feedback.
+ **Backend:** Node.js, Express, MongoDB, JavaScript
+ **Frontend:** React, JavaScript
 
 ## Tools Used
 - **Backend:** Node.js, Express, MongoDB, TypeScript
@@ -11,33 +11,24 @@ FoodPlanner is a MERN stack application that allows users to register, log in, a
 - **Testing:** Jest, Supertest (backend); React Testing Library (frontend)
 
 ## Backend Folder Structure
-```
-/backend
-├── models        # Mongoose models (User, Food)
-├── routes        # API routes (auth, food)
-├── controllers   # Route handlers
-├── middleware    # JWT auth, error handling
-├── config        # DB and environment config
-├── tests         # Unit/integration tests
-└── server.ts     # Entry point
+└── src
+	├── server.js      # Express app entry point
+	├── models/        # Mongoose models (User, Food)
+	├── routes/        # API routes (auth, food)
+	├── controllers/   # Route handlers
+	├── middleware/    # JWT auth, error handling
+├── config/        # DB and environment config
+├── tests/         # Unit/integration tests
 ```
 
 ## Frontend Folder Structure
-```
-/frontend
+│   ├── App.jsx      # Main app component
+│   └── index.jsx    # Entry point
 ├── src
 │   ├── components   # Register, Login, FoodList, FoodForm, DatePicker
 │   ├── hooks        # Custom React hooks
-│   ├── pages        # Main pages
-│   ├── services     # API calls
-│   ├── types        # TypeScript types
 │   ├── tests        # Unit/integration tests
 │   ├── App.tsx      # Main app component
-│   └── index.tsx    # Entry point
-```
-
-## Models
-### User
 - `email`: string
 - `password`: string (hashed)
 - `createdAt`, `updatedAt`: Date
