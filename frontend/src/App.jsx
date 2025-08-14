@@ -1,35 +1,25 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
 
-function App() {
-  const [count, setCount] = useState(0)
 
+
+import React from 'react';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+import FoodForm from './components/FoodForm';
+import DatePicker from './components/DatePicker';
+import FoodList from './components/FoodList';
+
+export default function App({ loggedIn, setLoggedIn }) {
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className="w-100" style={{ minWidth: '100vw', height: '100vh', margin: 0, padding: 0, display: 'flex', flexDirection: 'column', justifyContent: 'flex-start' }}>
+      <Navbar loggedIn={loggedIn} setLoggedIn={setLoggedIn} />
+      <div className="container mt-4">
+        <FoodForm />
+        <DatePicker />
+        <FoodList disabled={false} />
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+      <Footer />
+    </div>
+  );
 }
-
-export default App

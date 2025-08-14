@@ -10,23 +10,21 @@
 - **DevOps:** Docker, GitHub Actions (CI/CD)
 - **Testing:** Jest, Supertest (backend); React Testing Library (frontend)
 
-## Backend Folder Structure
-└── src
-	├── server.js      # Express app entry point
-	├── models/        # Mongoose models (User, Food)
-	├── routes/        # API routes (auth.js: register, login; food.js: CRUD)
-	├── controllers/   # Business logic (authController.js, foodController.js)
-	├── middleware/    # JWT auth (auth.js), error handling (errorHandler.js)
-├── config/        # DB and environment config
-├── tests/         # Unit/integration tests
-```
+## Frontend JWT Authentication
 
-## Frontend Folder Structure
-│   ├── App.jsx      # Main app component
-│   └── index.jsx    # Entry point
-├── src
-│   ├── components   # Register, Login, FoodList, FoodForm, DatePicker
-│   ├── hooks        # Custom React hooks
+### JWT Usage
+- JWT is used for authentication in the frontend.
+- Token is stored in `localStorage` under the key `jwt_token`.
+- API calls for register and login are handled in `src/services/auth.js`.
+- On login/register, the token is saved and used for authenticated requests.
+- Session state is restored on refresh by checking for the token in `localStorage`.
+- Logout removes the token from `localStorage`.
+
+#### Example Usage
+```js
+import { login, register, logout, getToken } from './src/services/auth.js';
+```
+See `src/services/auth.js` for implementation details.
 │   ├── tests        # Unit/integration tests
 │   ├── App.tsx      # Main app component
 - `email`: string
@@ -41,12 +39,12 @@
 - `createdAt`, `updatedAt`: Date
 
 ## Frontend Features
-- Register and login pages (JWT auth)
-- Add food entry: description, time, date (via datepicker)
-- Food list: displays entries instantly after adding
-- Update/Delete buttons for each entry
-- When viewing foods by date (using datepicker), update/delete buttons are disabled
-- Date picker on selecting the day and previewing the food
+
+## App Layout
+- Top: Bootstrap navbar with left-side logo, right-side Login/Register (shows Logout when logged in)
+- Middle: Insert food (date/time/description) and list
+- List: date, food, description, edit, delete
+- Datepicker above list; when a day is selected, shows all foods eaten that day as disabled (no edit/delete)
 
 ## DevOps
 - CI/CD pipeline with GitHub Actions for linting, testing, building, and deploying
