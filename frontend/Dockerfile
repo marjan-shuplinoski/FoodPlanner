@@ -1,5 +1,5 @@
 # Multi-stage build for production static site
-FROM node:18-alpine AS build
+FROM node:20-alpine AS build
 WORKDIR /app
 
 # Install deps
@@ -11,10 +11,8 @@ COPY . .
 RUN npm run build
 
 # Serve with nginx
-FROM nginx:stable-alpine
-# Put built files under /usr/share/nginx/html/DailyPlanner so URLs with /DailyPlanner/ map to files
-RUN mkdir -p /usr/share/nginx/html/DailyPlanner
-COPY --from=build /app/dist /usr/share/nginx/html/DailyPlanner
+FROM nginx:alpine AS production
+COPY --from=build /app/dist /usr/share/nginx/html/
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]

@@ -29,7 +29,7 @@ function LogoutWrapper({ auth }) {
 }
 
 const AppRoutes = ({ auth }) => (
-  <BrowserRouter basename='/DailyPlanner'>
+  <BrowserRouter basename='/'>
     <Routes>
       <Route path="/" element={<App auth={auth} />} />
       <Route path="/home" element={<App auth={auth} />} />

@@ -12,7 +12,7 @@ const Navbar = ({ auth }) => {
       <div className="container-fluid">
         <a className="navbar-brand" href="#" onClick={() => navigate('/') }>
           <img src="https://play-lh.googleusercontent.com/iVGnJZ88IVnGTjYZMwP--3HvCuoF0pRTodT1SoL5tHMZh2InBJrXWAj2tkr5peEPQgGz=w240-h480-rw" alt="Logo" width="30" height="30" className="d-inline-block align-top" />
-          DailyPlanner
+          Planner
         </a>
         <button
           className="navbar-toggler"
