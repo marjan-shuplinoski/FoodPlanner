@@ -1,7 +1,7 @@
-// JWT Auth Service for FoodPlanner Frontend
+// JWT Auth Service for DailyPlanner Frontend
 
-const API_URL = 'http://localhost:5000/api/auth';
-
+var API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+API_URL += '/auth';
 export async function register(email, password) {
   const res = await fetch(`${API_URL}/register`, {
     method: 'POST',

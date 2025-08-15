@@ -38,13 +38,19 @@ See `src/services/auth.js` for implementation details.
 - `date`: string (selected via datepicker)
 - `createdAt`, `updatedAt`: Date
 
-## Frontend Features
 
-## App Layout
-- Top: Bootstrap navbar with left-side logo, right-side Login/Register (shows Logout when logged in)
-- Middle: Insert food (date/time/description) and list
-- List: date, food, description, edit, delete
-- Datepicker above list; when a day is selected, shows all foods eaten that day as disabled (no edit/delete)
+## FoodForm Component
+- Allows users to add food entries with date, time, and description.
+- Controlled form with separate fields for date, time, and description.
+- Calls `onAddFood` prop to add food and resets fields after submit.
+
+## FoodList Component
+- Displays foods for the selected date.
+- Shows date & time, description, edit, and delete columns.
+- Supports editing and deleting food entries via props.
+- Edit button enables inline editing of description, Save updates backend and UI.
+- Delete button removes entry from backend and updates UI.
+- Shows loading and empty states.
 
 ## DevOps
 - CI/CD pipeline with GitHub Actions for linting, testing, building, and deploying

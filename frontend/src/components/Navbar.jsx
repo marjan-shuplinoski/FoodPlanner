@@ -1,6 +1,7 @@
 
 
 import React, { useState } from 'react';
+import { logout } from '../services/auth';
 import { useNavigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -12,7 +13,7 @@ const Navbar = ({ loggedIn, setLoggedIn }) => {
       <div className="container-fluid">
         <a className="navbar-brand" href="#" onClick={() => navigate('/') }>
           <img src="https://play-lh.googleusercontent.com/iVGnJZ88IVnGTjYZMwP--3HvCuoF0pRTodT1SoL5tHMZh2InBJrXWAj2tkr5peEPQgGz=w240-h480-rw" alt="Logo" width="30" height="30" className="d-inline-block align-top" />
-          FoodPlanner
+          DailyPlanner
         </a>
         <button
           className="navbar-toggler"
@@ -32,7 +33,7 @@ const Navbar = ({ loggedIn, setLoggedIn }) => {
                 <button className="btn btn-primary" onClick={() => navigate('/register')}>Register</button>
               </>
             ) : (
-              <button className="btn btn-danger" onClick={() => { setLoggedIn(false); navigate('/logout'); }}>Logout</button>
+              <button className="btn btn-danger" onClick={() => { logout(); setLoggedIn(false); navigate('/logout'); }}>Logout</button>
             )}
           </div>
         </div>

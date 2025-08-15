@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useNavigate, BrowserRouter } from 'react-router-dom';
 import App from './App';
 import Register from './components/Register';
 import Login from './components/Login';
@@ -29,7 +29,7 @@ function LogoutWrapper(props) {
 }
 
 const AppRoutes = ({ loggedIn, setLoggedIn }) => (
-  <Router>
+  <BrowserRouter basename='/DailyPlanner'>
     <Routes>
       <Route path="/" element={<App loggedIn={loggedIn} setLoggedIn={setLoggedIn} />} />
       <Route path="/home" element={<App loggedIn={loggedIn} setLoggedIn={setLoggedIn} />} />
@@ -37,7 +37,7 @@ const AppRoutes = ({ loggedIn, setLoggedIn }) => (
       <Route path="/login" element={<LoginWrapper loggedIn={loggedIn} setLoggedIn={setLoggedIn} />} />
       <Route path="/logout" element={<LogoutWrapper setLoggedIn={setLoggedIn} />} />
     </Routes>
-  </Router>
+  </BrowserRouter>
 );
 
 export default AppRoutes;
