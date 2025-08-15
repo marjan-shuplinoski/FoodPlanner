@@ -14,7 +14,7 @@ import FoodList from './components/FoodList';
 import { addFood, updateFood, deleteFood } from './services/food';
 import useFoods from './hooks/useFoods';
 
-export default function App({ loggedIn, setLoggedIn }) {
+export default function App({ auth }) {
   const [selectedDate, setSelectedDate] = React.useState('');
   const [refreshKey, setRefreshKey] = React.useState(0);
   React.useEffect(() => {
@@ -49,7 +49,7 @@ export default function App({ loggedIn, setLoggedIn }) {
 
   return (
     <div className="w-100" style={{ minWidth: '100vw', height: '100vh', margin: 0, padding: 0, display: 'flex', flexDirection: 'column', justifyContent: 'flex-start' }}>
-      <Navbar loggedIn={loggedIn} setLoggedIn={setLoggedIn} />
+  <Navbar auth={auth} />
       <div className="container mt-4">
         <FoodForm onAddFood={handleAddFood} />
   <DatePicker value={selectedDate} onDateChange={handleDateChange} />

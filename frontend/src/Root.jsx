@@ -1,13 +1,9 @@
 import React from 'react';
 import AppRoutes from './routes.jsx';
-import { getToken } from './services/auth.js';
+import useAuth from './hooks/useAuth';
 
 export default function Root() {
-  const [loggedIn, setLoggedIn] = React.useState(!!getToken());
+  const auth = useAuth();
 
-  React.useEffect(() => {
-    setLoggedIn(!!getToken());
-  }, []);
-
-  return <AppRoutes loggedIn={loggedIn} setLoggedIn={setLoggedIn} />;
+  return <AppRoutes auth={auth} />;
 }

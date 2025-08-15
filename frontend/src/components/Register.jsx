@@ -5,10 +5,9 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import Navbar from './Navbar';
 import Footer from './Footer';
-import { register as registerApi } from '../services/auth';
 
 
-const Register = ({ loggedIn, setLoggedIn, onSuccess }) => {
+const Register = ({ auth, onSuccess }) => {
   const [error, setError] = React.useState(null);
   const navigate = useNavigate();
 
@@ -17,8 +16,7 @@ const Register = ({ loggedIn, setLoggedIn, onSuccess }) => {
     const email = e.target.email.value;
     const password = e.target.password.value;
     try {
-      await registerApi(email, password);
-      setLoggedIn(true);
+      await auth.registerUser(email, password);
       if (onSuccess) onSuccess();
       navigate('/login');
     } catch (err) {
@@ -28,7 +26,7 @@ const Register = ({ loggedIn, setLoggedIn, onSuccess }) => {
 
   return (
     <div className="w-100" style={{ minWidth: '100vw', height: '100vh', margin: 0, padding: 0, display: 'flex', flexDirection: 'column', justifyContent: 'flex-start' }}>
-      <Navbar loggedIn={loggedIn} setLoggedIn={setLoggedIn} />
+  <Navbar auth={auth} />
       <div className="container mt-5">
         <h2>Register</h2>
         <form onSubmit={handleSubmit}>

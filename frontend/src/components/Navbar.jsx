@@ -1,11 +1,10 @@
 
 
 import React, { useState } from 'react';
-import { logout } from '../services/auth';
 import { useNavigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-const Navbar = ({ loggedIn, setLoggedIn }) => {
+const Navbar = ({ auth }) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const navigate = useNavigate();
   return (
@@ -27,13 +26,13 @@ const Navbar = ({ loggedIn, setLoggedIn }) => {
         </button>
         <div className={`collapse navbar-collapse${menuOpen ? ' show' : ''}`} id="navbarNav">
           <div className="ms-auto d-flex flex-column flex-lg-row align-items-lg-center">
-            {!loggedIn ? (
+            {!auth || !auth.isAuthenticated ? (
               <>
                 <button className="btn btn-outline-primary me-lg-2 mb-2 mb-lg-0" onClick={() => navigate('/login')}>Login</button>
                 <button className="btn btn-primary" onClick={() => navigate('/register')}>Register</button>
               </>
             ) : (
-              <button className="btn btn-danger" onClick={() => { logout(); setLoggedIn(false); navigate('/logout'); }}>Logout</button>
+              <button className="btn btn-danger" onClick={() => { if (auth && auth.logoutUser) auth.logoutUser(); navigate('/logout'); }}>Logout</button>
             )}
           </div>
         </div>

@@ -33,6 +33,11 @@ app.use(express.json());
 app.use('/api/auth', authRoutes);
 app.use('/api/food', foodRoutes);
 
+// lightweight health endpoint for container orchestration
+app.get('/health', (req, res) => {
+  return res.status(200).json({ status: 'ok' });
+});
+
 // Error handling middleware (should be last)
 app.use(errorHandler);
 

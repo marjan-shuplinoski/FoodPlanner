@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    image: foodplanner-frontend:latest
+    ports:
+      - "5173:80"
+    environment:
+      # Use VITE_API_URL at build/runtime to point to backend API
+      - VITE_API_URL=${VITE_API_URL:-http://localhost:5000}
+    restart: unless-stopped
