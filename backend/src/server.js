@@ -15,7 +15,8 @@ const app = express();
 const allowedOrigins = [
   process.env.CORS_ORIGIN,
   'http://localhost:5173',
-  'http://192.168.0.106:5173'
+  'http://192.168.0.106:5173',
+  'https://planner.shuplinoski.com'
 ];
 app.use(cors({
   origin: function (origin, callback) {
